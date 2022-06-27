@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  background: #46d7ab;
+  background: red;
   width: 162px;
   height: 110px;
   border-radius: 15px;
   padding: 10px 8px 0 16px;
+  margin-right: 11px;
   margin-bottom: 18px;
   .card-numero {
     font-family: "Inter", sans-serif;
@@ -29,7 +30,9 @@ const CardContainer = styled.div`
   }
   .card-detalhe {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
+    height: 65px;
+    width: 140px;
     div {
       display: grid;
       margin-top: 10px;
@@ -51,8 +54,9 @@ const CardContainer = styled.div`
       }
     }
     img {
-      width: 100%;
-      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      overflow: hidden;
       justify-self: center;
       align-self: center;
     }

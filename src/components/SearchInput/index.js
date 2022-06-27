@@ -1,11 +1,23 @@
 import React from "react";
-
-const SearchInput = ({ value, onChange }) => {
+import { ContainerSeacrch } from "./styled";
+import lupa from "../../img/lupa.png";
+const SearchInput = ({ value, onChange, ...props }) => {
   function handleChange(event) {
     onChange(event.target.value);
   }
 
-  return <input type="search" value={value} onChange={handleChange}></input>;
+  return (
+    <ContainerSeacrch>
+      <input
+        value={value}
+        onChange={handleChange}
+        type="search"
+        placeholder="Pesquisar pokemon"
+        {...props}
+      ></input>
+      <img src={lupa} alt="Barra de Pesquisa" />
+    </ContainerSeacrch>
+  );
 };
 
 export default SearchInput;

@@ -4,7 +4,7 @@ import CardPokemons from "../../CardPokemons";
 const FetchApi = () => {
   const [allPokemons, setAllPokemons] = React.useState([]);
   const [loadMore, setLoadMore] = React.useState(
-    ` https://pokeapi.co/api/v2/pokemon?limiy=20`,
+    ` https://pokeapi.co/api/v2/pokemon?limiy=0`,
   );
 
   const getAllPokemons = async () => {
@@ -25,24 +25,24 @@ const FetchApi = () => {
     }
     createPokemonObject(data.results);
   };
-  console.log(allPokemons);
   useEffect(() => {
     getAllPokemons();
   }, []);
 
+  allPokemons.map((pokemon) => console.log(pokemon));
+
   return (
-    <div>
+    <>
       {allPokemons.map((pokemon, index) => (
         <CardPokemons
           id={pokemon.id}
-          type={pokemon.types[0].type.name}
+          type={pokemon.types[0].type.name - " "}
           key={index}
           name={pokemon.name}
           image={pokemon.sprites.other.dream_world.front_default}
         />
       ))}
-      {/* {allPokemons.map((item) => console.log(item))} */}
-    </div>
+    </>
   );
 };
 

@@ -21,6 +21,7 @@ export const AreaHeader = styled.div`
     }
   }
   nav {
+    margin-right: 20px;
     ul {
       display: flex;
       flex-wrap: wrap;
